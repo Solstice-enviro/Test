@@ -8,7 +8,7 @@ import torch
 from torch.utils.data import Dataset
 
 
-def create_fake_data_and_write_to_disk(output_directory: Path):
+def create_fake_data_and_write_to_disk(output_directory: Path, unique_labels: list):
     """Simple method to create some fake data to play width."""
     np.random.seed(0)
 
@@ -78,7 +78,7 @@ if __name__ == "__main__":
 
     # let's create some fake data and write it to disk
     features_file_path, labels_file_path = create_fake_data_and_write_to_disk(
-        current_directory
+        current_directory, unique_labels
     )
 
     # create a Dataset object. This could be our "training" data.
